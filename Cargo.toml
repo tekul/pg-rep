@@ -1,0 +1,12 @@
+[package]
+name = "pg-rep"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.57"
+tokio = { version = "1.19.2", features = ["full"]}
+tokio-postgres = { git = "https://github.com/MaterializeInc/rust-postgres" }
+postgres-protocol = { git = "https://github.com/MaterializeInc/rust-postgres" }
+bytes = "1.1.0"
+futures = "0.3.21"
