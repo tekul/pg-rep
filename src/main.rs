@@ -74,11 +74,17 @@ async fn main() {
                 }
                 LogicalReplicationMessage::Origin(_) => todo!(),
                 LogicalReplicationMessage::Relation(_) => {}
-                LogicalReplicationMessage::Type(_) => todo!(),
+                LogicalReplicationMessage::Type(body) => {
+                    print!("{body:?}");
+                },
                 LogicalReplicationMessage::Insert(body) => {
-                    let _data = body.tuple();
+                    let data = body.tuple();
+                    print!("{data:?}");
                 }
-                LogicalReplicationMessage::Update(_) => todo!(),
+                LogicalReplicationMessage::Update(body) => {
+                    let data = body.new_tuple();
+                    print!("{data:?}");
+                },
                 LogicalReplicationMessage::Delete(_) => todo!(),
                 LogicalReplicationMessage::Truncate(_) => todo!(),
                 _ => todo!(),
